@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+{% block content %}
+<p>
+    This as a flow-reader bug database
+</p>
+
+<ul>
+{% for bug in bugs %}
+<li><a href="/image/{{ bug["_id"] }}">{{ bug["description"] }}</a></li>
+{% endfor %}
+</ul>
+{% endblock %}
