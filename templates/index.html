@@ -1,10 +1,25 @@
 {% extends "layout.html" %}
 {% block content %}
+ <p>The main flow-reader segmentation bug databse</p>
+  <blockquote class="blockquote">
+    <p>Dear User, here you can submit a problem with flow-reader, 
+    our Android app.
+    </p>
+    <p><a href="/bug/submit">Please use this link to submit a badly segmented image</a>
+    </p>
 
-<ul>
-<li>
-	<h3>Item</h3>
-</li>
-</ul>
+    <p>
+    Alternatively use the URL: /bug/new
+    You can submit a JSON of following format, image should be base64 encoded:
+    <code>
+    {
+    "description" : "second bug",
+    "image" : { "$binary" : "iVBORw0KGgoAAAANSUhEUgAABLAAAASwBAMAAAAZD678AAAAD1BMVEWg9tJy39AEQ", "$type" : "00" },
+    "contenttype" : "image/png"
+}
+    </code>
+    </p>
+    <footer class="blockquote-footer">Flow-reader team</footer>
+  </blockquote>
 
 {% endblock %}
