@@ -5,9 +5,14 @@ from base64 import b64encode, b64decode
 from bson.objectid import ObjectId
 from bson.binary import Binary
 import sys
+import os
+
+username = os.environ.get("USERNAME")
+password = os.environ.get("PASSWORD")
 
 app = Flask(__name__)
-app.config["MONGO_URI"] = "mongodb+srv://sergey:goteborg2@mycluster-jh3jq.mongodb.net/flow-reader?ssl=true&authSource=admin"
+
+app.config["MONGO_URI"] = "mongodb+srv://" + username + ":" + password + "@mycluster-jh3jq.mongodb.net/flow-reader?ssl=true&authSource=admin"
 app.secret_key = 'super secret key'
 mongo = PyMongo(app)
 
